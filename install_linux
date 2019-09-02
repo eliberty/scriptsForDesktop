@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+sudo apt-get -y update && sudo apt-get -y upgrade
+
+sudo apt-get -y install \
+  zip \
+  nano \
+  curl \
+  wget \
+  git \
+  net-tools \
+  smbclient \
+  build-essential \
+  apt-transport-https \
+  ca-certificates \
+  gnupg-agent \
+  software-properties-common \
+  zsh \
+  sudo
+
+sudo usermod -aG sudo eliberty
+
+sh ./app/install_zsh
+sh ./app/install_google
+sh ./app/install_phpstorm
+sh ./app/install_vault
+sh ./app/install_docker
+
+echo "Redémarrage du poste..."
+shutdown -r now
