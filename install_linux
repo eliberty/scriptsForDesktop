@@ -20,7 +20,7 @@ sudo apt-get -y install \
 
 sudo usermod -aG sudo eliberty
 
-sh ./app/install_z
+sh ./app/install_zsh
 sh ./app/install_google
 sh ./app/install_phpstorm
 sh ./app/install_vault
