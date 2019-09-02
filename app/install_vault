@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+sudo apt-get update -y
+
+vault_version=1.2.2
+
+cd /home/${USER}
+wget https://releases.hashicorp.com/vault/${vault_version}/vault_${vault_version}_linux_amd64.zip
+sudo unzip vault_${vault_version}_linux_amd64.zip -d /usr/local/bin
+rm -rf vault_${vault_version}_linux_amd64.zip
+
+#Tant que la variable est vide, j'attends la saisie
+while [ -z ${token} ]; do
+echo "Générer et taper un nouveau token Github https://github.com/settings/tokens/new (avec les cases suivantes cochées admin:org:read:org et user:read:user)"
+read token
+done
+
+echo "Installation autocompletion Vault"
+vault -autocomplete-install
+
+echo "export GITHUB_TOKEN=${token}" >> ~/.zshrc
+echo "export VAULT_ADDR=https://vault.service.consul:8200" >> ~/.zshrc
+
+source ~/.zshrc
+
+vault status
