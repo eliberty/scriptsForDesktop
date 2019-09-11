@@ -9,7 +9,7 @@ sudo apt-get install -y -q jq curl openssh-server
 
 useradd ${user} --uid 1010 --create-home
 sudo adduser ${user} sudo
-sudo passwd ${user}
+#sudo passwd ${user}
 mkdir -p /home/${user}/.ssh/
 touch /home/${user}/.ssh/authorized_keys
 echo $keyssh >> $path_authorized_keys
