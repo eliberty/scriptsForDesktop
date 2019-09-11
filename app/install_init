@@ -7,15 +7,12 @@ keyssh="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCqsF9iqWQFj+P27EY86TgHw91SIhDIzS6C
 sudo apt-get install -y build-essential libpq-dev
 sudo apt-get install -y -q jq curl openssh-server
 
-sudo apt-get install -y -q git python3-pip libssl-dev libffi-dev python3 python3-dev
-sudo pip3 install ansible==2.8 futures python-dateutil awscli boto3 psycopg2
-sudo pip3 install ansible-modules-hashivault
-
 #useradd ${user} --uid 1010 --create-home
 sudo adduser --gecos GECOS --disabled-password --uid 1010 ${user}
 sudo adduser ${user} sudo
 #sudo passwd ${user}
 sudo mkdir -p /home/${user}/.ssh/
+sudo su ${user}
 sudo touch /home/${user}/.ssh/authorized_keys
 sudo echo $keyssh >> $path_authorized_keys
 sudo chown -R ${user}:${user} /home/eliberty
