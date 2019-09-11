@@ -1,0 +1,2 @@
+[parc]
+eliberty-VirtualBox      ansible_connection=ssh ansible_user=elibadmin

@@ -1,0 +1,17 @@
+---
+- name: Install Vault
+  hosts: parc
+  become: true
+  vars:
+    vault_version: "1.2.2"
+
+
+  tasks:
+    - name: Download and install Vault binary
+      unarchive:
+        src: "https://releases.hashicorp.com/vault/{{ vault_version }}/vault_{{ vault_version }}_linux_amd64.zip"
+        dest: /usr/local/bin
+        validate_certs: no
+        remote_src: True
+        mode: 0555
+        owner: root
