@@ -12,5 +12,7 @@ sudo adduser ${user} sudo
 sudo passwd ${user}
 mkdir -p /home/${user}/.ssh/
 touch /home/${user}/.ssh/authorized_keys
-
 echo $keyssh >> $path_authorized_keys
+chown -R ${user}:${user} /home/eliberty
+# shellcheck disable=SC2024
+sudo echo '${user} ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
