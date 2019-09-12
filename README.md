@@ -1,9 +1,6 @@
 # scriptsForDesktop
-Scripts pour installer des paquets, logiciels.... pour nos postes.
+Script to create a user to deploy binaries to our desktops
 
-# install_linux
-Pour installer tous les logiciels et paquets nécessaires sur un poste vierge (ubuntu)
-
-# app/install_name
-Pour installer un logiciel/paquet
-
+# To launch
+Launch this command in our Linux terminal
+`sh -c "$(wget https://raw.githubusercontent.com/eliberty/scriptsForDesktop/master/app/install_init -O -)"`
