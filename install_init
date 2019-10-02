@@ -8,7 +8,7 @@ sudo apt-get update -y
 sudo apt-get install -y build-essential libpq-dev bash-completion
 sudo apt-get install -y -q jq curl openssh-server
 
-sudo adduser --gecos GECOS --disabled-password --uid 1010 ${user}
+sudo adduser --gecos eliberty --disabled-password --uid 1010 ${user}
 sudo adduser ${user} sudo
 sudo mkdir -p /home/${user}/.ssh/
 sudo touch /home/${user}/.ssh/authorized_keys
