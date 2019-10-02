@@ -6,7 +6,7 @@ keyssh="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCqsF9iqWQFj+P27EY86TgHw91SIhDIzS6C
 
 sudo apt-get update -y
 sudo apt-get install -y build-essential libpq-dev bash-completion
-sudo apt-get install -y -q jq curl openssh-server
+sudo apt-get install -y jq curl openssh-server
 
 sudo adduser --gecos eliberty --disabled-password --uid 1010 ${user}
 sudo adduser ${user} sudo
